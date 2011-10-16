@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "Texture2D.h"
+#import "MyTexture2D.h"
 
 @class MyEAGLView;
 
@@ -7,7 +7,7 @@
     IBOutlet UIWindow *window;
     IBOutlet MyEAGLView *glView;
     NSTimer* _timer;
-    Texture2D* _wheel;
+    MyTexture2D* _wheel;
     CGRect _wheelRect;
 }
 

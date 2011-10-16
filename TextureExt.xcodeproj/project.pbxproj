@@ -19,11 +19,12 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		4C58137B1449A76600EF1A47 /* wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5813791449A76600EF1A47 /* wheel.png */; };
 		4C58137C1449A76600EF1A47 /* wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C58137A1449A76600EF1A47 /* wheel@2x.png */; };
+		4C70575F1449CF7C00306BE2 /* MyTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C70575E1449CF7C00306BE2 /* MyTexture2D.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B34B76B0DF4538E003E9403 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Texture2D.h; path = Classes/Texture2D.h; sourceTree = "<group>"; };
-		1B34B76C0DF4538E003E9403 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Texture2D.m; path = Classes/Texture2D.m; sourceTree = "<group>"; };
+		1B34B76B0DF4538E003E9403 /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
+		1B34B76C0DF4538E003E9403 /* Texture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Texture2D.m; sourceTree = "<group>"; };
 		1B34B7790DF45428003E9403 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TextureExtAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureExtAppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +40,8 @@
 		32CA4F630368D1EE00C91783 /* TextureExt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureExt_Prefix.pch; sourceTree = "<group>"; };
 		4C5813791449A76600EF1A47 /* wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wheel.png; path = Images/wheel.png; sourceTree = "<group>"; };
 		4C58137A1449A76600EF1A47 /* wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wheel@2x.png"; path = "Images/wheel@2x.png"; sourceTree = "<group>"; };
+		4C70575D1449CF7C00306BE2 /* MyTexture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTexture2D.h; sourceTree = "<group>"; };
+		4C70575E1449CF7C00306BE2 /* MyTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTexture2D.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +64,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1B34B76B0DF4538E003E9403 /* Texture2D.h */,
+				1B34B76C0DF4538E003E9403 /* Texture2D.m */,
 				28FD14FC0DC6FC130079059D /* MyEAGLView.h */,
 				28FD14FD0DC6FC130079059D /* MyEAGLView.m */,
 				1D3623240D0F684500981E51 /* TextureExtAppDelegate.h */,
@@ -86,21 +91,21 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		1B34B7450DF4533C003E9403 /* OpenGL ES Support */ = {
+		1B34B7450DF4533C003E9403 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				1B34B76B0DF4538E003E9403 /* Texture2D.h */,
-				1B34B76C0DF4538E003E9403 /* Texture2D.m */,
+				4C70575D1449CF7C00306BE2 /* MyTexture2D.h */,
+				4C70575E1449CF7C00306BE2 /* MyTexture2D.m */,
 			);
-			name = "OpenGL ES Support";
+			name = Custom;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				1B34B7450DF4533C003E9403 /* OpenGL ES Support */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				1B34B7450DF4533C003E9403 /* Custom */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -205,6 +210,7 @@
 				1D3623260D0F684500981E51 /* TextureExtAppDelegate.m in Sources */,
 				28FD14FE0DC6FC130079059D /* MyEAGLView.m in Sources */,
 				1B34B76D0DF4538E003E9403 /* Texture2D.m in Sources */,
+				4C70575F1449CF7C00306BE2 /* MyTexture2D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

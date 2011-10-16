@@ -1,6 +1,7 @@
 #import <mach/mach_time.h>
 #import "TextureExtAppDelegate.h"
 #import "MyEAGLView.h"
+#import "MyTexture2D.h"
 
 
 @interface TextureExtAppDelegate ()
