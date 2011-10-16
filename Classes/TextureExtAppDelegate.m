@@ -25,7 +25,7 @@
 
     UIImage* image = [UIImage imageNamed:@"wheel.png"];
     NSLog(@"***** image size: %0.1f x %0.1f", image.size.width, image.size.height);
-    _wheel = [[Texture2D alloc] initWithImage:image];
+    _wheel = [[MyTexture2D alloc] initWithImage:image];
     NSLog(@"***** texture size: %d x %d", _wheel.pixelsWide, _wheel.pixelsHigh);
 
     CGRect bounds = [glView bounds];
