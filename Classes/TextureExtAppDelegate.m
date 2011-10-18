@@ -24,12 +24,13 @@
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
     UIImage* image = [UIImage imageNamed:@"wheel.png"];
-    NSLog(@"***** image size: %0.1f x %0.1f", image.size.width, image.size.height);
     _wheel = [[MyTexture2D alloc] initWithImage:image];
+    NSLog(@"***** image size: %0.1f x %0.1f", _wheel.contentSize.width, _wheel.contentSize.height);
     NSLog(@"***** texture size: %d x %d", _wheel.pixelsWide, _wheel.pixelsHigh);
 
     CGRect bounds = [glView bounds];
-    _wheelRect = CGRectMake((bounds.size.width - image.size.width) / 2, (bounds.size.height - image.size.height) / 2, image.size.width, image.size.height);
+    _wheelPoint1 = CGPointMake(bounds.size.width / 2, bounds.size.height / 2 - 100.0);
+    _wheelPoint2 = CGPointMake(bounds.size.width / 2, bounds.size.height / 2);
 
     _timer = [NSTimer scheduledTimerWithTimeInterval:(1.0f / 60.0f) target:self selector:@selector(renderScene) userInfo:nil repeats:YES];
     [UIApplication sharedApplication].idleTimerDisabled = YES;	
@@ -43,11 +44,16 @@
 }
 
 - (void) renderScene {
+    // Animate
+    angle += 1;
     // Draw
     glLoadIdentity(); 
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT); 
-    [_wheel drawInRect:_wheelRect];
+    
+    [_wheel drawAtPoint:_wheelPoint1];
+    [_wheel drawAtPoint:_wheelPoint2 rotatedBy:angle];
+    
     [glView swapBuffers];
 }
 

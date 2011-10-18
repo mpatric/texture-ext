@@ -8,7 +8,8 @@
     IBOutlet MyEAGLView *glView;
     NSTimer* _timer;
     MyTexture2D* _wheel;
-    CGRect _wheelRect;
+    CGPoint _wheelPoint1, _wheelPoint2;
+    float angle;
 }
 
 @end

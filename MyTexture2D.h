@@ -4,4 +4,7 @@
 
 - (id) initWithImage:(UIImage*)uiImage;
 
+- (void) drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle;
+- (void) drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle;
+
 @end
