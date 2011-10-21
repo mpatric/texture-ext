@@ -1,16 +1,15 @@
 #import "MyTexture2D.h"
 
+/*
+ This class extends Texture2D to provide additional functionality.
+ See blog post at: http://mpatric.com/2011-10-21-extending-texture2d-part-1-rotation
+ 
+ Michael Patricios, 2011
+*/
+
 @implementation MyTexture2D
 
-- (id) initWithImage:(UIImage *)uiImage {
-    self = [super initWithImage:uiImage];
-    if (self) {
-        
-    }
-    return self;
-}
-
-#define rotate_about_point(x, y, cx, cy, cosTheta, sinTheta) CGPointMake(((((x) - (cx)) * (cosTheta)) - (((y) - (cy)) * (sinTheta))) + (cx), ((((x) - (cx)) * (sinTheta)) + (((y) - (cy)) * (cosTheta))) + (cy));
+#define ROTATE_ABOUT_POINT(x, y, cx, cy, cosTheta, sinTheta) CGPointMake(((((x) - (cx)) * (cosTheta)) - (((y) - (cy)) * (sinTheta))) + (cx), ((((x) - (cx)) * (sinTheta)) + (((y) - (cy)) * (cosTheta))) + (cy));
 #define DEGREES_TO_RADIANS(__ANGLE__) ((__ANGLE__) / 180.0 * M_PI)
 
 - (void) drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle {
@@ -18,10 +17,10 @@
 	GLfloat cosTheta = cosf(radians);
 	GLfloat sinTheta = sinf(radians);
 	CGPoint center = CGPointMake(rect.origin.x + (rect.size.width / 2), rect.origin.y + (rect.size.height / 2));
-	CGPoint p1 = rotate_about_point(rect.origin.x, rect.origin.y, center.x, center.y, cosTheta, sinTheta);
-	CGPoint p2 = rotate_about_point(rect.origin.x + rect.size.width, rect.origin.y, center.x, center.y, cosTheta, sinTheta);
-	CGPoint p3 = rotate_about_point(rect.origin.x, rect.origin.y + rect.size.height, center.x, center.y, cosTheta, sinTheta);
-	CGPoint p4 = rotate_about_point(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, center.x, center.y, cosTheta, sinTheta);
+	CGPoint p1 = ROTATE_ABOUT_POINT(rect.origin.x, rect.origin.y, center.x, center.y, cosTheta, sinTheta);
+	CGPoint p2 = ROTATE_ABOUT_POINT(rect.origin.x + rect.size.width, rect.origin.y, center.x, center.y, cosTheta, sinTheta);
+	CGPoint p3 = ROTATE_ABOUT_POINT(rect.origin.x, rect.origin.y + rect.size.height, center.x, center.y, cosTheta, sinTheta);
+	CGPoint p4 = ROTATE_ABOUT_POINT(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, center.x, center.y, cosTheta, sinTheta);
 	GLfloat	coordinates[] = {
 		0, self.maxT,
 		self.maxS, self.maxT,
