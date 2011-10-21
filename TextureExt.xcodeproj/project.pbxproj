@@ -19,7 +19,9 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		4C58137B1449A76600EF1A47 /* wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5813791449A76600EF1A47 /* wheel.png */; };
 		4C58137C1449A76600EF1A47 /* wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C58137A1449A76600EF1A47 /* wheel@2x.png */; };
-		4C70575F1449CF7C00306BE2 /* MyTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C70575E1449CF7C00306BE2 /* MyTexture2D.m */; };
+		4C8E8C2D1451C69900E2E6A6 /* MyTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */; };
+		4C8E8C301451CC7000E2E6A6 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2E1451CC7000E2E6A6 /* box.png */; };
+		4C8E8C311451CC7000E2E6A6 /* box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +42,10 @@
 		32CA4F630368D1EE00C91783 /* TextureExt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureExt_Prefix.pch; sourceTree = "<group>"; };
 		4C5813791449A76600EF1A47 /* wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wheel.png; path = Images/wheel.png; sourceTree = "<group>"; };
 		4C58137A1449A76600EF1A47 /* wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wheel@2x.png"; path = "Images/wheel@2x.png"; sourceTree = "<group>"; };
-		4C70575D1449CF7C00306BE2 /* MyTexture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTexture2D.h; sourceTree = "<group>"; };
-		4C70575E1449CF7C00306BE2 /* MyTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTexture2D.m; sourceTree = "<group>"; };
+		4C8E8C2B1451C69900E2E6A6 /* MyTexture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTexture2D.h; path = Classes/MyTexture2D.h; sourceTree = "<group>"; };
+		4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTexture2D.m; path = Classes/MyTexture2D.m; sourceTree = "<group>"; };
+		4C8E8C2E1451CC7000E2E6A6 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box.png; path = Images/box.png; sourceTree = "<group>"; };
+		4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "box@2x.png"; path = "Images/box@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +89,8 @@
 		1B34B7350DF452DA003E9403 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C8E8C2E1451CC7000E2E6A6 /* box.png */,
+				4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */,
 				4C5813791449A76600EF1A47 /* wheel.png */,
 				4C58137A1449A76600EF1A47 /* wheel@2x.png */,
 			);
@@ -94,8 +100,8 @@
 		1B34B7450DF4533C003E9403 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				4C70575D1449CF7C00306BE2 /* MyTexture2D.h */,
-				4C70575E1449CF7C00306BE2 /* MyTexture2D.m */,
+				4C8E8C2B1451C69900E2E6A6 /* MyTexture2D.h */,
+				4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -196,6 +202,8 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				4C58137B1449A76600EF1A47 /* wheel.png in Resources */,
 				4C58137C1449A76600EF1A47 /* wheel@2x.png in Resources */,
+				4C8E8C301451CC7000E2E6A6 /* box.png in Resources */,
+				4C8E8C311451CC7000E2E6A6 /* box@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +218,7 @@
 				1D3623260D0F684500981E51 /* TextureExtAppDelegate.m in Sources */,
 				28FD14FE0DC6FC130079059D /* MyEAGLView.m in Sources */,
 				1B34B76D0DF4538E003E9403 /* Texture2D.m in Sources */,
-				4C70575F1449CF7C00306BE2 /* MyTexture2D.m in Sources */,
+				4C8E8C2D1451C69900E2E6A6 /* MyTexture2D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

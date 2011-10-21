@@ -7,8 +7,7 @@
     IBOutlet UIWindow *window;
     IBOutlet MyEAGLView *glView;
     NSTimer* _timer;
-    MyTexture2D* _wheel;
-    CGPoint _wheelPoint1, _wheelPoint2;
+    MyTexture2D *_wheel, *_box;
     float angle;
 }
 
