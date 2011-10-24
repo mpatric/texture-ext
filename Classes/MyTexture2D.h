@@ -12,4 +12,7 @@
 - (void) drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle;
 - (void) drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle;
 
+- (void) drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index;
+- (void) drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index;
+
 @end

@@ -43,5 +43,32 @@
     [self drawInRect:CGRectMake(point.x - self.contentSize.width / 2, point.y - self.contentSize.height / 2, self.contentSize.width, self.contentSize.height) rotatedBy: rotationAngle];
 }
 
+- (void) drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index {
+    GLfloat y = self.maxS * ((GLfloat)(index / (int)dimensions.height)) / dimensions.height;
+	GLfloat x = self.maxT * ((GLfloat)(index % (int)dimensions.width)) / dimensions.width;
+    
+	GLfloat	coordinates[] = {
+        x, y + (self.maxT / dimensions.height),
+        x + (self.maxS / dimensions.width), y + (self.maxT / dimensions.height),
+        x, y,
+        x + (self.maxS / dimensions.width),	y
+	};
+	GLfloat	vertices[] = {
+        rect.origin.x, rect.origin.y, 0.0,
+        rect.origin.x + rect.size.width, rect.origin.y, 0.0,
+        rect.origin.x, rect.origin.y + rect.size.height, 0.0,
+        rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, 0.0
+	};
+	
+	glBindTexture(GL_TEXTURE_2D, self.name);
+	glVertexPointer(3, GL_FLOAT, 0, vertices);
+	glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+}
+
+- (void) drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index {
+    [self drawAsSpriteSheetInRect:CGRectMake(point.x - self.contentSize.width / (2 * dimensions.width), point.y - self.contentSize.height / (2 * dimensions.height), self.contentSize.width / dimensions.width, self.contentSize.height / dimensions.height)
+                  sheetDimensions:dimensions index:index];
+}
 
 @end

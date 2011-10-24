@@ -22,6 +22,8 @@
 		4C8E8C2D1451C69900E2E6A6 /* MyTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */; };
 		4C8E8C301451CC7000E2E6A6 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2E1451CC7000E2E6A6 /* box.png */; };
 		4C8E8C311451CC7000E2E6A6 /* box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */; };
+		4CB0F1F11455C80100167AA5 /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB0F1EF1455C80100167AA5 /* spritesheet.png */; };
+		4CB0F1F21455C80100167AA5 /* spritesheet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB0F1F01455C80100167AA5 /* spritesheet@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTexture2D.m; path = Classes/MyTexture2D.m; sourceTree = "<group>"; };
 		4C8E8C2E1451CC7000E2E6A6 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box.png; path = Images/box.png; sourceTree = "<group>"; };
 		4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "box@2x.png"; path = "Images/box@2x.png"; sourceTree = "<group>"; };
+		4CB0F1EF1455C80100167AA5 /* spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spritesheet.png; path = Images/spritesheet.png; sourceTree = "<group>"; };
+		4CB0F1F01455C80100167AA5 /* spritesheet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spritesheet@2x.png"; path = "Images/spritesheet@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +97,8 @@
 				4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */,
 				4C5813791449A76600EF1A47 /* wheel.png */,
 				4C58137A1449A76600EF1A47 /* wheel@2x.png */,
+				4CB0F1EF1455C80100167AA5 /* spritesheet.png */,
+				4CB0F1F01455C80100167AA5 /* spritesheet@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				4C58137C1449A76600EF1A47 /* wheel@2x.png in Resources */,
 				4C8E8C301451CC7000E2E6A6 /* box.png in Resources */,
 				4C8E8C311451CC7000E2E6A6 /* box@2x.png in Resources */,
+				4CB0F1F11455C80100167AA5 /* spritesheet.png in Resources */,
+				4CB0F1F21455C80100167AA5 /* spritesheet@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
