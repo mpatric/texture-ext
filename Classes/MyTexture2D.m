@@ -12,6 +12,18 @@
 #define ROTATE_ABOUT_POINT(x, y, cx, cy, cosTheta, sinTheta) CGPointMake(((((x) - (cx)) * (cosTheta)) - (((y) - (cy)) * (sinTheta))) + (cx), ((((x) - (cx)) * (sinTheta)) + (((y) - (cy)) * (cosTheta))) + (cy));
 #define DEGREES_TO_RADIANS(__ANGLE__) ((__ANGLE__) / 180.0 * M_PI)
 
+@synthesize imageSize = _imageSize;
+
+- (id) initWithImage:(UIImage *)uiImage {
+    _imageSize = CGSizeMake(uiImage.size.width, uiImage.size.height);
+    self = [super initWithImage:uiImage];
+    return self;
+}
+
+- (void) drawAtPoint:(CGPoint)point {
+    [self drawInRect:CGRectMake(point.x - self.imageSize.width / 2, point.y - self.imageSize.height / 2, self.imageSize.width, self.imageSize.height)];
+}
+
 - (void) drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle {
 	float radians = DEGREES_TO_RADIANS(rotationAngle);
 	GLfloat cosTheta = cosf(radians);
@@ -40,7 +52,7 @@
 }
 
 - (void) drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle {
-    [self drawInRect:CGRectMake(point.x - self.contentSize.width / 2, point.y - self.contentSize.height / 2, self.contentSize.width, self.contentSize.height) rotatedBy: rotationAngle];
+    [self drawInRect:CGRectMake(point.x - self.imageSize.width / 2, point.y - self.imageSize.height / 2, self.imageSize.width, self.imageSize.height) rotatedBy: rotationAngle];
 }
 
 - (void) drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index {
@@ -67,7 +79,7 @@
 }
 
 - (void) drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index {
-    [self drawAsSpriteSheetInRect:CGRectMake(point.x - self.contentSize.width / (2 * dimensions.width), point.y - self.contentSize.height / (2 * dimensions.height), self.contentSize.width / dimensions.width, self.contentSize.height / dimensions.height)
+    [self drawAsSpriteSheetInRect:CGRectMake(point.x - self.imageSize.width / (2 * dimensions.width), point.y - self.imageSize.height / (2 * dimensions.height), self.imageSize.width / dimensions.width, self.imageSize.height / dimensions.height)
                   sheetDimensions:dimensions index:index];
 }
 

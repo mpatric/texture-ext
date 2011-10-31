@@ -7,7 +7,12 @@
  Michael Patricios, 2011
 */
 
-@interface MyTexture2D : Texture2D
+@interface MyTexture2D : Texture2D {
+@private
+	CGSize _imageSize;
+}
+
+@property (readonly, nonatomic) CGSize imageSize;
 
 - (void) drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle;
 - (void) drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle;

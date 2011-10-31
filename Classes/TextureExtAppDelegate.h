@@ -9,7 +9,7 @@
     NSTimer* _timer;
     MyTexture2D *_wheel, *_box, *_spritesheet;
     float angle;
-    int spriteIndex;
+    float spriteIndex;
 }
 
 @end

@@ -26,17 +26,18 @@
 
     UIImage* wheelImage = [UIImage imageNamed:@"wheel.png"];
     _wheel = [[MyTexture2D alloc] initWithImage:wheelImage];
-    NSLog(@"wheel image size: %0.1f x %0.1f", _wheel.contentSize.width, _wheel.contentSize.height);
+    NSLog(@"wheel image size: %0.1f x %0.1f", wheelImage.size.width, wheelImage.size.height);
+    NSLog(@"wheel content size: %0.1f x %0.1f", _wheel.contentSize.width, _wheel.contentSize.height);
     NSLog(@"wheel texture size: %d x %d", _wheel.pixelsWide, _wheel.pixelsHigh);
     
     UIImage* boxImage = [UIImage imageNamed:@"box.png"];
     _box = [[MyTexture2D alloc] initWithImage:boxImage];
-    NSLog(@"box image size: %0.1f x %0.1f", _box.contentSize.width, _box.contentSize.height);
+    NSLog(@"box content size: %0.1f x %0.1f", _box.contentSize.width, _box.contentSize.height);
     NSLog(@"box texture size: %d x %d", _box.pixelsWide, _box.pixelsHigh);
     
     UIImage* spritesheetImage = [UIImage imageNamed:@"spritesheet.png"];
     _spritesheet = [[MyTexture2D alloc] initWithImage:spritesheetImage];
-    NSLog(@"spritesheet image size: %0.1f x %0.1f", _spritesheet.contentSize.width, _spritesheet.contentSize.height);
+    NSLog(@"spritesheet content size: %0.1f x %0.1f", _spritesheet.contentSize.width, _spritesheet.contentSize.height);
     NSLog(@"spritesheet texture size: %d x %d", _spritesheet.pixelsWide, _spritesheet.pixelsHigh);
 
     _timer = [NSTimer scheduledTimerWithTimeInterval:(1.0f / 30.0f) target:self selector:@selector(renderScene) userInfo:nil repeats:YES];
@@ -56,9 +57,9 @@
     if (angle > 360) {
         angle -= 360;
     }
-    spriteIndex += 1;
-    if (spriteIndex > 7) {
-        spriteIndex = 0;
+    spriteIndex += 0.5;
+    if (spriteIndex > 12) {
+        spriteIndex -= 8;
     }
     // Draw
     glLoadIdentity(); 
@@ -71,7 +72,7 @@
     [_wheel drawAtPoint:CGPointMake(106, 192) rotatedBy:-angle];
     [_box drawAtPoint:CGPointMake(106, 96) rotatedBy:-angle];
     
-    [_spritesheet drawAsSpriteSheetAtPoint:CGPointMake(212, 240) sheetDimensions:CGSizeMake(3, 3) index:spriteIndex];
+    [_spritesheet drawAsSpriteSheetAtPoint:CGPointMake(212, 240) sheetDimensions:CGSizeMake(4, 4) index:(int)(spriteIndex)];
     
     [glView swapBuffers];
 }
