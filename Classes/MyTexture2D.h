@@ -2,7 +2,10 @@
 
 /*
  This class extends Texture2D to provide additional functionality.
- See blog post at: http://mpatric.com/2011-10-21-extending-texture2d-part-1-rotation
+ See blog posts at:
+ 
+    http://mpatric.com/2011-10-21-extending-texture2d-part-1-rotation
+    http://mpatric.com/2011-10-31-extending-texture2d-part-2-sprite-sheets
 
  Michael Patricios, 2011
 */
