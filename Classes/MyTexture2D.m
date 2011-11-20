@@ -59,8 +59,6 @@
 }
 
 - (void) drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index {
-    GLfloat y = self.maxS * ((GLfloat)(index / (int)dimensions.height)) / dimensions.height;
-	GLfloat x = self.maxT * ((GLfloat)(index % (int)dimensions.width)) / dimensions.width;
     GLfloat x = self.maxS * ((GLfloat)(index % (int)dimensions.width)) / dimensions.width;
     GLfloat y = self.maxT * ((GLfloat)(index / (int)dimensions.height)) / dimensions.height;
     
