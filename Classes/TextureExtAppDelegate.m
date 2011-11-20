@@ -30,9 +30,6 @@ const int potion_animation_key_count = 13;
 
     UIImage* wheelImage = [UIImage imageNamed:@"wheel.png"];
     _wheel = [[MyTexture2D alloc] initWithImage:wheelImage];
-    NSLog(@"wheel image size: %0.1f x %0.1f", wheelImage.size.width, wheelImage.size.height);
-    NSLog(@"wheel content size: %0.1f x %0.1f", _wheel.contentSize.width, _wheel.contentSize.height);
-    NSLog(@"wheel texture size: %d x %d", _wheel.pixelsWide, _wheel.pixelsHigh);
     
     UIImage* boxImage = [UIImage imageNamed:@"box.png"];
     _box = [[MyTexture2D alloc] initWithImage:boxImage];
@@ -67,29 +64,31 @@ const int potion_animation_key_count = 13;
     }
     princeIndex += 0.5;
     if (princeIndex > (prince_animation_key_count - 1)) {
-        princeIndex -= 8;
+        princeIndex -= 8; // only repeat the last 8 frames
     }
-    potionIndex += 0.5;
+    potionIndex += 0.125;
     if (potionIndex > (potion_animation_key_count - 1)) {
         potionIndex -= potion_animation_key_count;
     }
+    
     // Draw
     glLoadIdentity(); 
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT); 
     
+    // Rotated textures
     [_wheel drawAtPoint:CGPointMake(106, 384)];
     [_wheel drawAtPoint:CGPointMake(106, 288) rotatedBy:angle];
     [_box drawAtPoint:CGPointMake(106, 192) rotatedBy:angle];
     [_wheel drawAtPoint:CGPointMake(106, 192) rotatedBy:-angle];
     [_box drawAtPoint:CGPointMake(106, 96) rotatedBy:-angle];
     
+    // Texture from a sprite sheet
     [_spritesheet drawAsSpriteSheetAtPoint:CGPointMake(212, 288) sheetDimensions:CGSizeMake(4, 4) index:(int)(princeIndex)];
 
-    [_spriteatlas drawFromAtlasAtPoint:CGPointMake(212, 192) key:(NSString*)prince_animation_keys[1]];
-    
-//    [_spriteatlas drawFromAtlasAtPoint:CGPointMake(212, 192) key:(NSString*)prince_animation_keys[(int)princeIndex]];
-//    [_spriteatlas drawFromAtlasAtPoint:CGPointMake(212, 96) key:(NSString*)potion_animation_keys[(int)potionIndex]];
+    // Textures from a texture atlas
+    [_spriteatlas drawFromAtlasAtPoint:CGPointMake(212, 192) key:(NSString*)prince_animation_keys[(int)princeIndex]];
+    [_spriteatlas drawFromAtlasAtPoint:CGPointMake(212, 96) key:(NSString*)potion_animation_keys[(int)potionIndex]];
     
     [glView swapBuffers];
 }

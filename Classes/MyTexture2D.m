@@ -119,22 +119,20 @@
 }
 
 - (void) drawFromAtlasAtPoint:(CGPoint)point key:(NSString*)key {
-    NSLog(@"key: %@", key);
     NSValue* value = [_spriteAtlas valueForKey:key];
     if (value) {
         CGRect atlasRect = [value CGRectValue];
-        NSLog(@"rect: %0.1f, %0.1f, %0.1f, %0.1f", atlasRect.origin.x, atlasRect.origin.y, atlasRect.size.width, atlasRect.size.height);
         [self drawInRect:CGRectMake(point.x - atlasRect.size.width / 2, point.y - atlasRect.size.height / 2, atlasRect.size.width, atlasRect.size.height) textureRect:atlasRect];
     }
 }
 
 - (void) drawInRect:(CGRect)rect textureRect:(CGRect)textureRect {
-    GLfloat y = self.maxS * (textureRect.origin.y / self.imageSize.height);
-    GLfloat x = self.maxT * (textureRect.origin.x / self.imageSize.width);
+    GLfloat x = self.maxS * (textureRect.origin.x / self.imageSize.width);
+    GLfloat y = self.maxT * (textureRect.origin.y / self.imageSize.height);
     
     GLfloat	coordinates[] = {
         x, y + (self.maxT * (textureRect.size.height / self.imageSize.height)),
-        x + (self.maxS * (textureRect.size.width / self.imageSize.width)), y + (self.maxT * (textureRect.size.height / self.imageSize.width)),
+        x + (self.maxS * (textureRect.size.width / self.imageSize.width)), y + (self.maxT * (textureRect.size.height / self.imageSize.height)),
         x, y,
         x + (self.maxS * (textureRect.size.width / self.imageSize.width)), y
     };
