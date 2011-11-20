@@ -48,8 +48,8 @@
 	
 	_size = newSize;
 	if (!_hasBeenCurrent) {
-		glViewport(0, 0, newSize.width, newSize.height);
-		glScissor(0, 0, newSize.width, newSize.height);
+		glViewport(0, 0, newSize.width * self.contentScaleFactor, newSize.height * self.contentScaleFactor);
+		glScissor(0, 0, newSize.width * self.contentScaleFactor, newSize.height * self.contentScaleFactor);
 		_hasBeenCurrent = YES;
 	} else {
 		glBindFramebufferOES(GL_FRAMEBUFFER_OES, oldFramebuffer);
@@ -85,6 +85,21 @@
 
 - (id) initWithCoder:(NSCoder*)coder {
 	if ((self = [super initWithCoder:coder])) {
+        /* for retina display */
+		@try
+		{
+			UIScreen* mainscr = [UIScreen mainScreen];
+			if ([mainscr respondsToSelector:@selector(currentMode)]) {
+				CGSize screenSize = mainscr.currentMode.size;
+				if ((int)screenSize.width == 640 && (int)screenSize.height == 960) {
+					self.contentScaleFactor = 2.0f;
+				}
+			}
+		}
+		@catch (NSException* e)
+		{
+		}
+        
 		CAEAGLLayer *eaglLayer = (CAEAGLLayer*)[self layer];
 		
 		[eaglLayer setDrawableProperties:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGB565, kEAGLDrawablePropertyColorFormat, nil]];
