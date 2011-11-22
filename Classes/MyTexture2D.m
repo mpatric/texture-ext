@@ -6,9 +6,15 @@
  
     http://mpatric.com/2011-10-21-extending-texture2d-part-1-rotation
     http://mpatric.com/2011-10-31-extending-texture2d-part-2-sprite-sheets
+    http://mpatric.com/2011-11-22-extending-texture2d-part-3-texture-atlas
 
  Michael Patricios, 2011
 */
+
+@interface MyTexture2D(PrivateMethods)
+- (void) drawInRect:(CGRect)rect textureRect:(CGRect)textureRect;
+- (void) readAtlasWithFilename:(NSString*)atlasFilename;
+@end
 
 @implementation MyTexture2D
 
@@ -17,10 +23,29 @@
 
 @synthesize imageSize = _imageSize;
 
-- (id) initWithImage:(UIImage *)uiImage {
+- (id) initWithImage:(UIImage*)uiImage {
     _imageSize = CGSizeMake(uiImage.size.width, uiImage.size.height);
+    _textureAtlas = nil;
     self = [super initWithImage:uiImage];
     return self;
+}
+
+- (id) initWithImage:(UIImage*)uiImage atlasFilename:(NSString*)atlasFilename {
+    _imageSize = CGSizeMake(uiImage.size.width, uiImage.size.height);
+    _textureAtlas = nil;
+    self = [super initWithImage:uiImage];
+    if (self) {
+        [self readAtlasWithFilename:atlasFilename];
+    }
+    return self;
+}
+
+- (void) dealloc {
+    if (_textureAtlas) {
+        [_textureAtlas release];
+        _textureAtlas = nil;
+    }
+    [super dealloc];
 }
 
 - (void) drawAtPoint:(CGPoint)point {
@@ -84,6 +109,74 @@
 - (void) drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index {
     [self drawAsSpriteSheetInRect:CGRectMake(point.x - self.imageSize.width / (2 * dimensions.width), point.y - self.imageSize.height / (2 * dimensions.height), self.imageSize.width / dimensions.width, self.imageSize.height / dimensions.height)
                   sheetDimensions:dimensions index:index];
+}
+
+- (void) drawFromAtlasInRect:(CGRect)rect key:(NSString*)key {
+    NSValue* value = [_textureAtlas valueForKey:key];
+    if (value) {
+        CGRect atlasRect = [value CGRectValue];
+        [self drawInRect:rect textureRect:atlasRect];
+    }
+}
+
+- (void) drawFromAtlasAtPoint:(CGPoint)point key:(NSString*)key {
+    NSValue* value = [_textureAtlas valueForKey:key];
+    if (value) {
+        CGRect atlasRect = [value CGRectValue];
+        [self drawInRect:CGRectMake(point.x - atlasRect.size.width / 2, point.y - atlasRect.size.height / 2, atlasRect.size.width, atlasRect.size.height) textureRect:atlasRect];
+    }
+}
+
+- (void) drawInRect:(CGRect)rect textureRect:(CGRect)textureRect {
+    GLfloat x = self.maxS * (textureRect.origin.x / self.imageSize.width);
+    GLfloat y = self.maxT * (textureRect.origin.y / self.imageSize.height);
+    
+    GLfloat	coordinates[] = {
+        x, y + (self.maxT * (textureRect.size.height / self.imageSize.height)),
+        x + (self.maxS * (textureRect.size.width / self.imageSize.width)), y + (self.maxT * (textureRect.size.height / self.imageSize.height)),
+        x, y,
+        x + (self.maxS * (textureRect.size.width / self.imageSize.width)), y
+    };
+    GLfloat	vertices[] = {
+        rect.origin.x, rect.origin.y, 0.0,
+        rect.origin.x + rect.size.width, rect.origin.y, 0.0,
+        rect.origin.x, rect.origin.y + rect.size.height, 0.0,
+        rect.origin.x + rect.size.width, rect.origin.y + rect.size.height, 0.0
+    };
+    
+    glBindTexture(GL_TEXTURE_2D, self.name);
+    glVertexPointer(3, GL_FLOAT, 0, vertices);
+    glTexCoordPointer(2, GL_FLOAT, 0, coordinates);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+}
+
+- (void) readAtlasWithFilename:(NSString*)atlasFilename {
+    if (_textureAtlas) {
+        [_textureAtlas release];
+        _textureAtlas = nil;
+    }
+    NSString* path = [[NSBundle mainBundle] pathForResource:atlasFilename ofType:nil];
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    if (content == nil) {
+        NSLog(@"Warning: could not read specified sprite atlas file: %@", atlasFilename);
+    } else {
+        NSArray* lines = [content componentsSeparatedByString:@"\n"];
+        _textureAtlas = [[NSMutableDictionary dictionaryWithCapacity:lines.count] retain];
+        for (NSString* line in lines) {
+            if (line.length == 0) continue;
+            NSArray* data = [line componentsSeparatedByString:@","];
+            CGRect rect = CGRectMake([[data objectAtIndex:1] intValue], [[data objectAtIndex:2] intValue], [[data objectAtIndex:3] intValue], [[data objectAtIndex:4] intValue]);
+            [_textureAtlas setValue:[NSValue valueWithCGRect:rect] forKey:[data objectAtIndex:0]];
+        }
+    }
+}
+
+- (int) count {
+    if (_textureAtlas) {
+        return _textureAtlas.count;
+    } else {
+        return 1;
+    }
 }
 
 @end

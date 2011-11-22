@@ -7,9 +7,9 @@
     IBOutlet UIWindow *window;
     IBOutlet MyEAGLView *glView;
     NSTimer* _timer;
-    MyTexture2D *_wheel, *_box, *_spritesheet;
+    MyTexture2D *_wheel, *_box, *_spritesheet, *_textureAtlas;
     float angle;
-    float spriteIndex;
+    float princeIndex, potionIndex;
 }
 
 @end
