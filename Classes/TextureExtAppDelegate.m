@@ -37,11 +37,11 @@ const int potion_animation_key_count = 13;
     UIImage* spritesheetImage = [UIImage imageNamed:@"spritesheet.png"];
     _spritesheet = [[MyTexture2D alloc] initWithImage:spritesheetImage];
     
-    UIImage* spriteatlasImage = [UIImage imageNamed:@"spriteatlas.png"];
-    _spriteatlas = [[MyTexture2D alloc] initWithImage:spriteatlasImage atlasFilename:@"spriteatlas.txt"];
-    NSLog(@"spriteatlas content size: %0.1f x %0.1f", _spriteatlas.contentSize.width, _spriteatlas.contentSize.height);
-    NSLog(@"spriteatlas texture size: %d x %d", _spriteatlas.pixelsWide, _spriteatlas.pixelsHigh);
-    NSLog(@"spriteatlas count: %d", _spriteatlas.count);
+    UIImage* textureAtlasImage = [UIImage imageNamed:@"textureatlas.png"];
+    _textureAtlas = [[MyTexture2D alloc] initWithImage:textureAtlasImage atlasFilename:@"textureatlas.txt"];
+    NSLog(@"textureatlas content size: %0.1f x %0.1f", _textureAtlas.contentSize.width, _textureAtlas.contentSize.height);
+    NSLog(@"textureatlas texture size: %d x %d", _textureAtlas.pixelsWide, _textureAtlas.pixelsHigh);
+    NSLog(@"textureatlas count: %d", _textureAtlas.count);
     
     princeIndex = potionIndex = 0.0f;
 
@@ -87,8 +87,8 @@ const int potion_animation_key_count = 13;
     [_spritesheet drawAsSpriteSheetAtPoint:CGPointMake(212, 288) sheetDimensions:CGSizeMake(4, 4) index:(int)(princeIndex)];
 
     // Textures from a texture atlas
-    [_spriteatlas drawFromAtlasAtPoint:CGPointMake(212, 192) key:(NSString*)prince_animation_keys[(int)princeIndex]];
-    [_spriteatlas drawFromAtlasAtPoint:CGPointMake(212, 96) key:(NSString*)potion_animation_keys[(int)potionIndex]];
+    [_textureAtlas drawFromAtlasAtPoint:CGPointMake(212, 192) key:(NSString*)prince_animation_keys[(int)princeIndex]];
+    [_textureAtlas drawFromAtlasAtPoint:CGPointMake(212, 96) key:(NSString*)potion_animation_keys[(int)potionIndex]];
     
     [glView swapBuffers];
 }

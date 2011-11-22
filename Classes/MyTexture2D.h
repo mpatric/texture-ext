@@ -13,7 +13,7 @@
 @interface MyTexture2D : Texture2D {
 @private
 	CGSize _imageSize;
-    NSMutableDictionary* _spriteAtlas;
+    NSMutableDictionary* _textureAtlas;
 }
 
 @property (readonly, nonatomic) CGSize imageSize;
