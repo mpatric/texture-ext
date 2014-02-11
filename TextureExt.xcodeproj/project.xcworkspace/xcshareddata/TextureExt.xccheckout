@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3E37FAA8-57C4-4E34-8449-77EF0881C52B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TextureExt</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EA6372B7-A877-409F-A724-999D53F94A93</key>
+		<string>ssh://github.com/mpatric/texture-ext.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TextureExt.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EA6372B7-A877-409F-A724-999D53F94A93</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/mpatric/texture-ext.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EA6372B7-A877-409F-A724-999D53F94A93</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EA6372B7-A877-409F-A724-999D53F94A93</string>
+			<key>IDESourceControlWCCName</key>
+			<string>texture-ext</string>
+		</dict>
+	</array>
+</dict>
+</plist>

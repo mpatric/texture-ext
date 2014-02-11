@@ -12,8 +12,8 @@
 */
 
 @interface MyTexture2D(PrivateMethods)
-- (void) drawInRect:(CGRect)rect textureRect:(CGRect)textureRect;
-- (void) readAtlasWithFilename:(NSString*)atlasFilename;
+- (void)drawInRect:(CGRect)rect textureRect:(CGRect)textureRect;
+- (void)readAtlasWithFilename:(NSString*)atlasFilename;
 @end
 
 @implementation MyTexture2D
@@ -23,14 +23,14 @@
 
 @synthesize imageSize = _imageSize;
 
-- (id) initWithImage:(UIImage*)uiImage {
+- (id)initWithImage:(UIImage*)uiImage {
     _imageSize = CGSizeMake(uiImage.size.width, uiImage.size.height);
     _textureAtlas = nil;
     self = [super initWithImage:uiImage];
     return self;
 }
 
-- (id) initWithImage:(UIImage*)uiImage atlasFilename:(NSString*)atlasFilename {
+- (id)initWithImage:(UIImage*)uiImage atlasFilename:(NSString*)atlasFilename {
     _imageSize = CGSizeMake(uiImage.size.width, uiImage.size.height);
     _textureAtlas = nil;
     self = [super initWithImage:uiImage];
@@ -40,7 +40,7 @@
     return self;
 }
 
-- (void) dealloc {
+- (void)dealloc {
     if (_textureAtlas) {
         [_textureAtlas release];
         _textureAtlas = nil;
@@ -48,11 +48,11 @@
     [super dealloc];
 }
 
-- (void) drawAtPoint:(CGPoint)point {
+- (void)drawAtPoint:(CGPoint)point {
     [self drawInRect:CGRectMake(point.x - self.imageSize.width / 2, point.y - self.imageSize.height / 2, self.imageSize.width, self.imageSize.height)];
 }
 
-- (void) drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle {
+- (void)drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle {
 	float radians = DEGREES_TO_RADIANS(rotationAngle);
 	GLfloat cosTheta = cosf(radians);
 	GLfloat sinTheta = sinf(radians);
@@ -79,11 +79,11 @@
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
-- (void) drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle {
+- (void)drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle {
     [self drawInRect:CGRectMake(point.x - self.imageSize.width / 2, point.y - self.imageSize.height / 2, self.imageSize.width, self.imageSize.height) rotatedBy: rotationAngle];
 }
 
-- (void) drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index {
+- (void)drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index {
     GLfloat x = self.maxS * ((GLfloat)(index % (int)dimensions.width)) / dimensions.width;
     GLfloat y = self.maxT * ((GLfloat)(index / (int)dimensions.height)) / dimensions.height;
     
@@ -106,12 +106,12 @@
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
-- (void) drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index {
+- (void)drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index {
     [self drawAsSpriteSheetInRect:CGRectMake(point.x - self.imageSize.width / (2 * dimensions.width), point.y - self.imageSize.height / (2 * dimensions.height), self.imageSize.width / dimensions.width, self.imageSize.height / dimensions.height)
                   sheetDimensions:dimensions index:index];
 }
 
-- (void) drawFromAtlasInRect:(CGRect)rect key:(NSString*)key {
+- (void)drawFromAtlasInRect:(CGRect)rect key:(NSString*)key {
     NSValue* value = [_textureAtlas valueForKey:key];
     if (value) {
         CGRect atlasRect = [value CGRectValue];
@@ -127,7 +127,7 @@
     }
 }
 
-- (void) drawInRect:(CGRect)rect textureRect:(CGRect)textureRect {
+- (void)drawInRect:(CGRect)rect textureRect:(CGRect)textureRect {
     GLfloat x = self.maxS * (textureRect.origin.x / self.imageSize.width);
     GLfloat y = self.maxT * (textureRect.origin.y / self.imageSize.height);
     
@@ -150,7 +150,7 @@
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
-- (void) readAtlasWithFilename:(NSString*)atlasFilename {
+- (void)readAtlasWithFilename:(NSString*)atlasFilename {
     if (_textureAtlas) {
         [_textureAtlas release];
         _textureAtlas = nil;
@@ -171,7 +171,7 @@
     }
 }
 
-- (int) count {
+- (int)count {
     if (_textureAtlas) {
         return _textureAtlas.count;
     } else {

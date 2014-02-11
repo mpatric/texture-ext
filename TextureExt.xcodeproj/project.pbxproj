@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B34B76D0DF4538E003E9403 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B34B76C0DF4538E003E9403 /* Texture2D.m */; };
+		1B34B76D0DF4538E003E9403 /* Texture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B34B76C0DF4538E003E9403 /* Texture2D.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1B34B77D0DF45428003E9403 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B34B7790DF45428003E9403 /* CoreGraphics.framework */; };
 		1D3623260D0F684500981E51 /* TextureExtAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TextureExtAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		28FD14FE0DC6FC130079059D /* MyEAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* MyEAGLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		4C58137B1449A76600EF1A47 /* wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5813791449A76600EF1A47 /* wheel.png */; };
 		4C58137C1449A76600EF1A47 /* wheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C58137A1449A76600EF1A47 /* wheel@2x.png */; };
-		4C8E8C2D1451C69900E2E6A6 /* MyTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */; };
+		4C786A4418AAD4C400926A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C786A4318AAD4C400926A6E /* Main.storyboard */; };
+		4C786A4718AAD6A900926A6E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C786A4618AAD6A900926A6E /* ViewController.m */; };
+		4C786A4918AAD9F900926A6E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C786A4818AAD9F900926A6E /* Default-568h@2x.png */; };
+		4C786A4B18AADC3400926A6E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C786A4A18AADC3400926A6E /* GLKit.framework */; };
+		4C8E8C2D1451C69900E2E6A6 /* MyTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4C8E8C301451CC7000E2E6A6 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2E1451CC7000E2E6A6 /* box.png */; };
 		4C8E8C311451CC7000E2E6A6 /* box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */; };
 		4CB0F1F11455C80100167AA5 /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB0F1EF1455C80100167AA5 /* spritesheet.png */; };
@@ -38,17 +40,19 @@
 		1D3623250D0F684500981E51 /* TextureExtAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureExtAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* TextureExt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextureExt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		28FD14FC0DC6FC130079059D /* MyEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEAGLView.h; sourceTree = "<group>"; };
-		28FD14FD0DC6FC130079059D /* MyEAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEAGLView.m; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* TextureExt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureExt_Prefix.pch; sourceTree = "<group>"; };
 		4C5813791449A76600EF1A47 /* wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wheel.png; path = Images/wheel.png; sourceTree = "<group>"; };
 		4C58137A1449A76600EF1A47 /* wheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wheel@2x.png"; path = "Images/wheel@2x.png"; sourceTree = "<group>"; };
-		4C8E8C2B1451C69900E2E6A6 /* MyTexture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTexture2D.h; path = Classes/MyTexture2D.h; sourceTree = "<group>"; };
-		4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTexture2D.m; path = Classes/MyTexture2D.m; sourceTree = "<group>"; };
+		4C786A4318AAD4C400926A6E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4C786A4518AAD6A900926A6E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = SOURCE_ROOT; };
+		4C786A4618AAD6A900926A6E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = SOURCE_ROOT; };
+		4C786A4818AAD9F900926A6E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4C786A4A18AADC3400926A6E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		4C8E8C2B1451C69900E2E6A6 /* MyTexture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTexture2D.h; sourceTree = "<group>"; };
+		4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTexture2D.m; sourceTree = "<group>"; };
 		4C8E8C2E1451CC7000E2E6A6 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box.png; path = Images/box.png; sourceTree = "<group>"; };
 		4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "box@2x.png"; path = "Images/box@2x.png"; sourceTree = "<group>"; };
 		4CB0F1EF1455C80100167AA5 /* spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spritesheet.png; path = Images/spritesheet.png; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C786A4B18AADC3400926A6E /* GLKit.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
@@ -78,12 +83,14 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1B34B76B0DF4538E003E9403 /* Texture2D.h */,
-				1B34B76C0DF4538E003E9403 /* Texture2D.m */,
-				28FD14FC0DC6FC130079059D /* MyEAGLView.h */,
-				28FD14FD0DC6FC130079059D /* MyEAGLView.m */,
 				1D3623240D0F684500981E51 /* TextureExtAppDelegate.h */,
 				1D3623250D0F684500981E51 /* TextureExtAppDelegate.m */,
+				4C786A4518AAD6A900926A6E /* ViewController.h */,
+				4C786A4618AAD6A900926A6E /* ViewController.m */,
+				1B34B76B0DF4538E003E9403 /* Texture2D.h */,
+				1B34B76C0DF4538E003E9403 /* Texture2D.m */,
+				4C8E8C2B1451C69900E2E6A6 /* MyTexture2D.h */,
+				4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 		1B34B7350DF452DA003E9403 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C786A4818AAD9F900926A6E /* Default-568h@2x.png */,
 				4C8E8C2E1451CC7000E2E6A6 /* box.png */,
 				4C8E8C2F1451CC7000E2E6A6 /* box@2x.png */,
 				4C5813791449A76600EF1A47 /* wheel.png */,
@@ -111,21 +119,11 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		1B34B7450DF4533C003E9403 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				4C8E8C2B1451C69900E2E6A6 /* MyTexture2D.h */,
-				4C8E8C2C1451C69900E2E6A6 /* MyTexture2D.m */,
-			);
-			name = Custom;
-			sourceTree = "<group>";
-		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				1B34B7450DF4533C003E9403 /* Custom */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -146,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1B34B7350DF452DA003E9403 /* Images */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				4C786A4318AAD4C400926A6E /* Main.storyboard */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				4CD09591147C5F74005CDFE4 /* textureatlas.txt */,
 			);
@@ -156,11 +154,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C786A4A18AADC3400926A6E /* GLKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				1B34B7790DF45428003E9403 /* CoreGraphics.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				28FD15070DC6FC5B0079059D /* QuartzCore.framework */,
 				28FD14FF0DC6FC520079059D /* OpenGLES.framework */,
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,11 +213,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				4C58137B1449A76600EF1A47 /* wheel.png in Resources */,
 				4C58137C1449A76600EF1A47 /* wheel@2x.png in Resources */,
 				4C8E8C301451CC7000E2E6A6 /* box.png in Resources */,
 				4C8E8C311451CC7000E2E6A6 /* box@2x.png in Resources */,
+				4C786A4918AAD9F900926A6E /* Default-568h@2x.png in Resources */,
+				4C786A4418AAD4C400926A6E /* Main.storyboard in Resources */,
 				4CB0F1F11455C80100167AA5 /* spritesheet.png in Resources */,
 				4CB0F1F21455C80100167AA5 /* spritesheet@2x.png in Resources */,
 				4CD09592147C5F74005CDFE4 /* textureatlas.txt in Resources */,
@@ -234,9 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C786A4718AAD6A900926A6E /* ViewController.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* TextureExtAppDelegate.m in Sources */,
-				28FD14FE0DC6FC130079059D /* MyEAGLView.m in Sources */,
 				1B34B76D0DF4538E003E9403 /* Texture2D.m in Sources */,
 				4C8E8C2D1451C69900E2E6A6 /* MyTexture2D.m in Sources */,
 			);
@@ -249,6 +249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -256,6 +257,7 @@
 				GCC_PREFIX_HEADER = TextureExt_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = TextureExt;
 			};
 			name = Debug;
@@ -264,11 +266,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TextureExt_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = TextureExt;
 			};
 			name = Release;

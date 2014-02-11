@@ -19,18 +19,18 @@
 
 @property (readonly, nonatomic) CGSize imageSize;
 
-- (id) initWithImage:(UIImage*)uiImage;
-- (id) initWithImage:(UIImage*)uiImage atlasFilename:(NSString*)atlasFilename;
+- (id)initWithImage:(UIImage*)uiImage;
+- (id)initWithImage:(UIImage*)uiImage atlasFilename:(NSString*)atlasFilename;
 
-- (void) drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle;
-- (void) drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle;
+- (void)drawInRect:(CGRect)rect rotatedBy:(float)rotationAngle;
+- (void)drawAtPoint:(CGPoint)point rotatedBy:(float)rotationAngle;
 
-- (void) drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index;
-- (void) drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index;
+- (void)drawAsSpriteSheetInRect:(CGRect)rect sheetDimensions:(CGSize)dimensions index:(int)index;
+- (void)drawAsSpriteSheetAtPoint:(CGPoint)point sheetDimensions:(CGSize)dimensions index:(int)index;
 
-- (void) drawFromAtlasInRect:(CGRect)rect key:(NSString*)key;
-- (void) drawFromAtlasAtPoint:(CGPoint)point key:(NSString*)key;
+- (void)drawFromAtlasInRect:(CGRect)rect key:(NSString*)key;
+- (void)drawFromAtlasAtPoint:(CGPoint)point key:(NSString*)key;
 
-- (int) count;
+- (int)count;
 
 @end
